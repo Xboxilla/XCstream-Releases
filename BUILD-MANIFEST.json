@@ -1,37 +1,44 @@
 {
   "version": "0.9.8-beta",
-  "source_commit": "d24d8e18cdc673495bab69f0c7d53724143c10d6",
-  "source_tag": "v0.9.8-beta",
+  "release_tag": "v0.9.8-beta.1",
+  "source_commit": "9019bf971f2344f088606bb811e0409ff4181029",
+  "source_tag": "v0.9.8-beta.1",
+  "build_run": 37145569453,
+  "tests": {
+    "passed": 541,
+    "failed": 0,
+    "skipped": 0
+  },
   "packages": [
     {
       "target": "darwin-amd64",
       "archive": "XCstream-0.9.8-beta-darwin-amd64.zip",
-      "sha256": "20b59142ab11d761aa5ceefc2e9d659a70a00232455044496daad8663495c047"
+      "sha256": "021f75d274295c3d6105befba225f89cb0a69a919eb0b79fdc28a0bf9c448e29"
     },
     {
       "target": "darwin-arm64",
       "archive": "XCstream-0.9.8-beta-darwin-arm64.zip",
-      "sha256": "87ea2401ec4b09afb5bb3bab88f7816d928a350a1b4f61ef4edc31ab3ad79a2f"
+      "sha256": "adb497576d79031f26eed444644417aaeadc33c20c4a776799482e1095d99789"
     },
     {
       "target": "linux-amd64",
       "archive": "XCstream-0.9.8-beta-linux-amd64.zip",
-      "sha256": "e9ddf10eec78fd5243d5f763afd4ed5d31cb818ddd5ee6b848566c1a02edb42b"
+      "sha256": "cb4a71b497082e1abadd6df359786f0eef8414392145ba537c6f1b959f316c15"
     },
     {
       "target": "linux-arm64",
       "archive": "XCstream-0.9.8-beta-linux-arm64.zip",
-      "sha256": "328e28b9bf21a849b9ee5d0979ba059708194beb568c1389e60d05bc3bad6780"
+      "sha256": "4839c87f67748b10b538f1c57d00ac922816e1a460b87207284483b4ad437b6b"
     },
     {
       "target": "windows-amd64",
       "archive": "XCstream-0.9.8-beta-windows-amd64.zip",
-      "sha256": "5990c495f3ad495deb68bce07e063426143cb325849bdf24cecb41fbb409c7b8"
+      "sha256": "941bb0e9b1f672ada5b54e4fc60fd253eb86975f29f2b71759b883adab397a4e"
     },
     {
       "target": "windows-arm64",
       "archive": "XCstream-0.9.8-beta-windows-arm64.zip",
-      "sha256": "ad3b598725b5d488694c0446b03603c781981df2c2bc3990f5c42a8c94236b61"
+      "sha256": "7d24c30dd0a7e3eb3efd52b5cf9f1787ab71b83bf6be53db4bdb35820c017c81"
     }
   ]
 }
