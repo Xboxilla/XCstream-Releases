@@ -1,44 +1,48 @@
 {
   "version": "0.9.8-beta",
-  "release_tag": "v0.9.8-beta.1",
-  "source_commit": "9019bf971f2344f088606bb811e0409ff4181029",
-  "source_tag": "v0.9.8-beta.1",
-  "build_run": 37145569453,
+  "release_tag": "v0.9.8-beta",
+  "source_commit": "257fc075dc378c84ea048c3285bfabf52e3ad2c2",
+  "build_run": 37159715033,
   "tests": {
-    "passed": 541,
+    "passed": 555,
     "failed": 0,
     "skipped": 0
+  },
+  "linux_packaged_shutdown": {
+    "single_signal": 6,
+    "repeated_signal": 6,
+    "setup": 7
   },
   "packages": [
     {
       "target": "darwin-amd64",
       "archive": "XCstream-0.9.8-beta-darwin-amd64.zip",
-      "sha256": "021f75d274295c3d6105befba225f89cb0a69a919eb0b79fdc28a0bf9c448e29"
+      "sha256": "8ee2443bd8411da00b94586731fd4f396dc60502ed59ec0cf968fdb11529b389"
     },
     {
       "target": "darwin-arm64",
       "archive": "XCstream-0.9.8-beta-darwin-arm64.zip",
-      "sha256": "adb497576d79031f26eed444644417aaeadc33c20c4a776799482e1095d99789"
+      "sha256": "2988e64da1f10b6f69b452c1f3aafce0d5be488c544b286e9116f92e4dd45672"
     },
     {
       "target": "linux-amd64",
       "archive": "XCstream-0.9.8-beta-linux-amd64.zip",
-      "sha256": "cb4a71b497082e1abadd6df359786f0eef8414392145ba537c6f1b959f316c15"
+      "sha256": "bb7e917e2ed882fcb230410c721cf07d17262e0110af485f6898ff77c94e1516"
     },
     {
       "target": "linux-arm64",
       "archive": "XCstream-0.9.8-beta-linux-arm64.zip",
-      "sha256": "4839c87f67748b10b538f1c57d00ac922816e1a460b87207284483b4ad437b6b"
+      "sha256": "75c2548cb62e3796520a58a3ad25263100470f724470e52ef5b183f47d859aa8"
     },
     {
       "target": "windows-amd64",
       "archive": "XCstream-0.9.8-beta-windows-amd64.zip",
-      "sha256": "941bb0e9b1f672ada5b54e4fc60fd253eb86975f29f2b71759b883adab397a4e"
+      "sha256": "decf9e2fc8d3128d7e69e33bbe0ad7e56d58cfd5bad7deb4245570ab6d554126"
     },
     {
       "target": "windows-arm64",
       "archive": "XCstream-0.9.8-beta-windows-arm64.zip",
-      "sha256": "7d24c30dd0a7e3eb3efd52b5cf9f1787ab71b83bf6be53db4bdb35820c017c81"
+      "sha256": "adf0371dd955b53a939690132a378e5e888bebb2347532ace07eded727d009a8"
     }
   ]
 }
