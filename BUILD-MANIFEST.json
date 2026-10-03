@@ -1,0 +1,37 @@
+{
+  "version": "0.9.8-beta",
+  "source_commit": "d24d8e18cdc673495bab69f0c7d53724143c10d6",
+  "source_tag": "v0.9.8-beta",
+  "packages": [
+    {
+      "target": "darwin-amd64",
+      "archive": "XCstream-0.9.8-beta-darwin-amd64.zip",
+      "sha256": "20b59142ab11d761aa5ceefc2e9d659a70a00232455044496daad8663495c047"
+    },
+    {
+      "target": "darwin-arm64",
+      "archive": "XCstream-0.9.8-beta-darwin-arm64.zip",
+      "sha256": "87ea2401ec4b09afb5bb3bab88f7816d928a350a1b4f61ef4edc31ab3ad79a2f"
+    },
+    {
+      "target": "linux-amd64",
+      "archive": "XCstream-0.9.8-beta-linux-amd64.zip",
+      "sha256": "e9ddf10eec78fd5243d5f763afd4ed5d31cb818ddd5ee6b848566c1a02edb42b"
+    },
+    {
+      "target": "linux-arm64",
+      "archive": "XCstream-0.9.8-beta-linux-arm64.zip",
+      "sha256": "328e28b9bf21a849b9ee5d0979ba059708194beb568c1389e60d05bc3bad6780"
+    },
+    {
+      "target": "windows-amd64",
+      "archive": "XCstream-0.9.8-beta-windows-amd64.zip",
+      "sha256": "5990c495f3ad495deb68bce07e063426143cb325849bdf24cecb41fbb409c7b8"
+    },
+    {
+      "target": "windows-arm64",
+      "archive": "XCstream-0.9.8-beta-windows-arm64.zip",
+      "sha256": "ad3b598725b5d488694c0446b03603c781981df2c2bc3990f5c42a8c94236b61"
+    }
+  ]
+}
