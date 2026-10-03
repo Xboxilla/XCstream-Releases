@@ -1,4 +1,4 @@
-# XCstream v0.9.8-beta.1 — refreshed private binary packages
+# XCstream v0.9.8-beta — private binary packages
 
 Source commit: `9019bf9` (`9019bf971f2344f088606bb811e0409ff4181029`)
 Source tag: `v0.9.8-beta.1`

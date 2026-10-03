@@ -1,7 +1,8 @@
 # XCstream private binary releases
 
-Current refreshed release: [v0.9.8-beta.1](https://github.com/Xboxilla/XCstream-Releases/releases/tag/v0.9.8-beta.1).
+Current release: [XCstream v0.9.8-beta](https://github.com/Xboxilla/XCstream-Releases/releases/tag/v0.9.8-beta.1).
 Source commit: `9019bf9` (`9019bf971f2344f088606bb811e0409ff4181029`). 541 tests passed, 0 failed, 0 skipped.
+Immutable source/distribution tag: `v0.9.8-beta.1` (build provenance, not a new product version).
 This repository contains native binary releases and distribution documentation
 only: no XCstream source files or source history. Binary repository access does
 not grant access to the separate private source repository.
