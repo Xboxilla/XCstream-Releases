@@ -1,15 +1,20 @@
-# XCstream binary releases
+# XCstream private binary releases
 
-This **private** repository contains native XCstream binary release downloads
-and documentation only. It contains no XCstream source files or source history.
-Download v0.9.8-beta from this repository's Releases page and verify SHA256SUMS.
-GitHub's automatically generated source archives contain these documents only,
-not the XCstream engine. No license grant or redistribution permission is added.
+Current refreshed release: [v0.9.8-beta.1](https://github.com/Xboxilla/XCstream-Releases/releases/tag/v0.9.8-beta.1).
+Source commit: `9019bf9` (`9019bf971f2344f088606bb811e0409ff4181029`). 541 tests passed, 0 failed, 0 skipped.
+This repository contains native binary releases and distribution documentation
+only: no XCstream source files or source history. Binary repository access does
+not grant access to the separate private source repository.
 
-XCstream is one standalone MPEG-TS continuity engine with optional Kernel Media
-Server Direct integration. XCstream owns all virtual tuners and recovery.
+Choose the ZIP matching your OS/CPU and verify SHA256SUMS. Six targets:
+Linux AMD64/ARM64, macOS AMD64/ARM64 and Windows AMD64/ARM64.
+Each archive carries BUILD.json provenance and third-party notices.
 
-Unzip the package for your OS/CPU. For Linux AMD64, for example:
+No Python/Docker runtime required. FFmpeg and ffprobe are not included.
+Supply the qualified matching tools; default paths are bin/ffmpeg and
+bin/ffprobe beside the executable (.exe on Windows), not PATH.
+
+Linux AMD64 launch example (the product filename/version remains v0.9.8-beta):
 
 ```sh
 chmod +x XCstream-0.9.8-beta-linux-amd64
@@ -18,15 +23,12 @@ chmod +x XCstream-0.9.8-beta-linux-amd64
   --ffmpeg-path /path/to/ffmpeg --ffprobe-path /path/to/ffprobe
 ```
 
-No Python or Docker runtime. FFmpeg/ffprobe are external matching qualified
-tools; absent overrides, XCstream expects installation-relative bin/ffmpeg and
-bin/ffprobe (.exe on Windows), not PATH. Default configuration is XCstream.json
-beside the executable. Use writable log/buffer/cache locations.
+Default JSON is XCstream.json beside the executable. Use writable log/buffer/
+cache locations and trusted-network listeners. Kernel Media Server Direct and
+standalone M3U share XCstream's normal tuner pool. See KERNEL-MEDIA-SERVER.md.
+macOS is not Developer ID signed/notarized; trusted private downloads may need
+Privacy & Security approval. Windows may likewise warn about unsigned apps.
 
-macOS packages are not Developer ID signed/notarized. Approve this trusted
-private download using macOS Privacy & Security if Gatekeeper blocks it.
-Windows may likewise require unsigned-application approval.
-
-The source build commit `d24d8e18cdc673495bab69f0c7d53724143c10d6` is recorded for traceability only; binary
-repository access does not grant access to the private source repository.
-Python executable packaging is not encryption or a reverse-engineering barrier.
+Old v0.9.8-beta packages remain available unchanged for provenance.
+No license or redistribution grant is added. Python executable packaging is not
+encryption or protection from reverse engineering.
