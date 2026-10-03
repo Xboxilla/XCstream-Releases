@@ -6,7 +6,7 @@ normal tuner pool; Kernel Media Server never owns or force-releases tuners.
 GET /direct (long-lived MPEG-TS response)
 
 Request headers:
-- XCstream-Source: required provider/HDHomeRun media URI
+- XCstream-Source: required upstream media URI
 - XCstream-Name: optional safe display name
 - XCstream-Proxy: optional per-session proxy URI
 - XCstream-XMLTV-ID: optional stable XMLTV identity
