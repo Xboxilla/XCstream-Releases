@@ -34,5 +34,3 @@ must be supplied as a qualified matching pair. Private unsigned/not notarized
 beta; operating-system approval may be needed. No new license terms are added.
 Linux packages use Ubuntu 22.04/glibc 2.35; macOS packages use native macOS 15
 runners; Windows packages use Windows 2022/Windows 11 ARM runners.
-
-This single current release replaces the retired binary distributions.
