@@ -1,26 +1,54 @@
 # XCstream v0.9.8-beta — private binary packages
 
-Source commit: `257fc075dc378c84ea048c3285bfabf52e3ad2c2`
+Source commit: `105d87202fa3b4243bb917c9b98348d5dc189d1c`
 Distribution tag: `v0.9.8-beta`
-Build workflow: https://github.com/Xboxilla/XCstream/actions/runs/37159715033
+Linux/macOS build workflow: https://github.com/Xboxilla/XCstream/actions/runs/37267930856
+Windows build workflow: https://github.com/Xboxilla/XCstream/actions/runs/37337427786
 
-**555 tests passed, 0 failed, 0 skipped.** Compile/protected-core/P0 checks passed.
+**600 tests passed, 0 failed, 0 skipped.** Compile/protected-core/P0 checks passed.
 All six native architectures built successfully and passed packaged executable
 help/version, generated-config and missing-headless-config smoke checks.
-Linux AMD64 source and packaged executables each passed all six SIGINT/SIGTERM
-cases: idle, /watch and /direct, including repeated signals, with listeners and
-owned media processes cleaned up. Source and packaged interactive setup gates
-also passed, including clean Ctrl-C and the first-run launch pause in all modes.
+Each native runner also passed 25 portable setup/presentation tests, checked
+that the new setup modules were embedded, and verified frozen refresh defaults.
+Linux AMD64 source and packaged executables each passed six ordinary plus six
+repeated SIGINT/SIGTERM cases: idle, /watch and /direct. Listeners and owned media
+processes were cleaned up; exit statuses were 130/143. Each also passed twelve
+real-PTY setup cases: three cancellations, review/validate/save-and-exit,
+edit/quit, invalid-save rejection, missing/invalid/mismatched media-tool paths,
+and first-run Standard M3U, Direct and Both. Review Space/Enter paging and Q
+return were exercised in a real 24-row terminal before validation/save.
+Interactive Windows/macOS setup is not separately end-to-end qualified.
 Other-platform service-control, end-to-end playback and extended soak are not
 inferred from these native CLI/configuration smoke checks.
 
-This build includes the latest configuration cleanup, setup/shutdown polish and
-conditional disk-only endpoint logging. Proxy and Dashboard are always logged;
-KMS, M3U and EPG XML are logged only when their configuration is enabled. These
-entries never appear in the runtime terminal, HUD or Recent Events. The first-run
-setup completion screen may still show M3U/EPG URLs before Enter to launch.
+This build completes the terminal setup management utility and short automatic
+first-run flow. It adds a compact title box, aligned values, grouped Review,
+Unicode/ASCII fallback and Back navigation without a browser or full-screen TUI.
+Review paging detects interactive terminal height without splitting sections;
+fitting Reviews and piped output do not pause. FFmpeg/ffprobe prompts qualify
+paths locally and retain automatic sibling discovery. Dashboard uptime uses
+the existing arrow presentation; the embedded view remains free of uptime.
+Tuners groups capacity and HDHomeRun compatibility. Matching media tools and
+configuration are qualified before atomic save. M3U/XMLTV remain local-file-only;
+Direct-only quick setup asks for neither. Newly created first-run configurations
+start with verbose diagnostics off; existing settings, automatic advertised
+host and disk-buffer defaults are retained.
+
+HUD/Web refresh is 1–5 seconds (default 1). HUD event rows are 4–50 (default 10);
+Web rows are 10–100 (default 20). Dashboard and embedded view share Web settings.
+Advanced contains low-level timing, probing and maintenance controls. Terminal
+Lineup/RAM label spacing and dynamic disk-only startup banner width are retained.
+Conditional disk-only endpoint discovery remains absent from runtime terminal,
+HUD and Recent Events; first-run setup still shows applicable URLs before launch.
 No protected media/recovery behavior changed. The runtime product banner remains
 v0.9.8-beta. Every ZIP's BUILD.json identifies the exact source commit above.
+The build workflow provisions the existing default buffer directory only on
+disposable Linux runners for qualification. It then builds a clean checkout of
+the frozen source SHA; no product source or configuration default was changed.
+Windows qualification compares the resolved temporary missing-file path, matching
+setup's existing path resolution rather than assuming its short-path spelling is
+unchanged. All 25 tests run; no test is skipped. This build-only adaptation
+does not modify any file in the frozen checkout or packaged application.
 
 **No XCstream source code or source history is included in this binary repository.**
 Its Git history contains distribution documents/manifests only. GitHub source

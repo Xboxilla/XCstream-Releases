@@ -1,8 +1,8 @@
 # XCstream v0.9.8-beta — private binary releases
 
 Current release: [XCstream v0.9.8-beta](https://github.com/Xboxilla/XCstream-Releases/releases/tag/v0.9.8-beta).
-Source commit: `257fc075dc378c84ea048c3285bfabf52e3ad2c2`.
-555 tests passed, 0 failed, 0 skipped. See RELEASE.md and BUILD-MANIFEST.json.
+Source commit: `105d87202fa3b4243bb917c9b98348d5dc189d1c`.
+600 tests passed, 0 failed, 0 skipped. See RELEASE.md and BUILD-MANIFEST.json.
 This repository contains native binary releases and distribution documentation
 only: no XCstream source files or source history. Binary repository access does
 not grant access to the separate private source repository.
@@ -32,11 +32,23 @@ Privacy & Security approval. Windows may likewise warn about unsigned apps.
 
 First interactive launch without valid JSON enters terminal setup, saves
 atomically, then waits for Enter before starting. Standard M3U/Both setup shows
-media-server URLs before that pause; Direct-only setup does not. Explicit
+media-server URLs before that pause; Direct-only shows Dashboard/Direct URLs. Explicit
 --setup edits, saves and exits. Headless launch never prompts. Setup Ctrl-C
 cancels cleanly with exit 130. Runtime SIGINT/SIGTERM use owned cleanup and exit
 130/143, including harmless repeated signals. Startup endpoint discovery is
 disk-log-only, never runtime terminal/HUD/Recent Events output.
+
+Setup now provides a compact terminal-native interface, Unicode/ASCII fallback,
+aligned values, grouped Review, and Back navigation. Interactive Review pauses
+between complete sections when needed for terminal height: Enter/Space continues,
+Q returns. Fitting and non-interactive Reviews do not pause. No browser or full-screen
+TUI is required. Full setup groups HDHomeRun compatibility under Tuners; all
+integrations still share one tuner pool. Local M3U/XMLTV files only.
+
+Logging/display controls: HUD and Web refresh intervals are 1–5 seconds (default
+1); HUD Recent Events rows are 4–50 (default 10); Web rows are 10–100 (default
+20). The dashboard and embedded view share Web preferences. First-run verbose
+diagnostics starts off for new configurations only; existing values remain.
 
 No license or redistribution grant is added. Python executable packaging is not
 encryption or protection from reverse engineering.
