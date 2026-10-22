@@ -109,4 +109,4 @@ provenance rather than ZIP archive hashes. No new build or certification is impl
 - Binaries are unsigned and not notarized; see README.md for launch guidance.
 
 The beta is provided for evaluation and field testing, not as production-certified
-software. Older releases remain available as historical provenance.
+software. Only v0.9.10-beta is currently published; obsolete beta releases have been retired.
