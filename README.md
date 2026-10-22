@@ -8,7 +8,7 @@ Copyright © 2026 Eyal Benedek. All rights reserved.
 See [LICENSE-XCSTREAM.md](LICENSE-XCSTREAM.md) for evaluation and distribution
 terms. Third-party components retain their own licenses.
 
-Current release: [XCstream v0.9.10-beta](https://github.com/Xboxilla/XCstream-Releases/releases/tag/v0.9.10-beta).
+Current release: [XCstream v0.9.10-beta](https://github.com/Xboxilla/XCstream/releases/tag/v0.9.10-beta).
 Download the matching native ZIP and SHA256SUMS. See [RELEASE.md](RELEASE.md)
 for the six-platform qualification matrix and documented limitations.
 
@@ -99,3 +99,12 @@ See [RELEASE.md](RELEASE.md) for completed qualification and limitations,
 qualification passed; the additional Rosetta check failed as documented.
 Windows interactive/service-control and downstream playback certification remain
 outstanding. This beta is not production-, DVR-, or client-certified.
+
+## Bug reports and feature requests
+
+Use [GitHub Issues](https://github.com/Xboxilla/XCstream/issues) for bug reports,
+compatibility problems, installation difficulties, recovery or recording failures,
+and feature requests. Reading issues is public; creating one may require a GitHub
+account. Include the XCstream version, operating system and reproduction steps.
+Remove provider credentials, tokens and other private information from any logs
+or screenshots before posting. Discussions are not enabled.
