@@ -1,69 +1,107 @@
-# XCstream v0.9.9-beta — private native binaries
+# XCstream v0.9.10-beta
 
-Source commit: `eed993ed0385de63c9b381a64ebde64a717c734b`
-Source branch: `development/v0.9.9-beta`
-Source/distribution tag: `v0.9.9-beta`
-Build/qualification: https://github.com/Xboxilla/XCstream/actions/runs/37553673980
+Private beta. One application and one immutable local-source snapshot for six
+native targets. BUILD.json records that commit and the dependency provenance.
 
-## Changes
+## Changes since the distributed v0.9.8-beta
 
-- Setup adds DVR/Live TV priority presets over six existing settings, derived
-  Custom recognition, Default/Automatic terminology and 19 Advanced controls.
-  DVR remains the default with a 128 KB serving gate; Live TV uses the same
-  engine with the specified faster settings and a 64 KB gate.
-- Matched synthetic Slate is generated asynchronously, validated by probe and
-  decoder, and reused by normalized media contract for the process lifetime.
-  Builds are deduplicated and bounded. Generic H.264/HEVC Slate stays available
-  as fallback. Dynamic assets are fenced and cleaned at process shutdown.
-- Protected Slate Handoff is optional and Disabled by default. Enabled sessions
-  keep Slate public while private recovery proves sustained byte/clock and
-  independent processing progress, an exact compatible profile and an in-band
-  configuration/IDR start. The same qualified process transfers through existing
-  recovery tickets and the existing bounded publication queue/timeline.
+- Expanded terminal Initial Setup and full Setup utility, safe local-path editors,
+  validation before atomic save, Review paging and terminal-state restoration.
+- Functional FFmpeg/ffprobe discovery/preflight; native FFmpeg User-Agent unless
+  an explicit custom value is configured.
+- Persistent validated Default/Match Slate assets and optional Custom Slate video,
+  bounded background preparation, profile matching and validated fallback.
+- Preserved first-secure-upstream protection for slow initial acquisition.
+- Simplified Buffer presentation and refined attributed Slate disk diagnostics.
+- Missing standalone channels fail before tuner admission; Direct ownership,
+  duplicate protection and shared-tuner semantics remain intact.
 
-Provider video remains stream-copy. No HLS/DASH packaging, provider transcoding,
-second tuner pool or observer recovery authority is added. The private v0.9.8
-source baseline and released artifacts remain unchanged.
+Streaming Priority and Protected Slate Handoff are not available settings in this
+version. This release does not restore those removed options or a second media
+engine. Existing media, recovery, session and shutdown behavior is unchanged by
+the packaging work.
 
-## Qualification
+## Bundled dependencies
 
-643 full-suite tests passed, 0 failed, 0 skipped; compile and protected-core/P0
-checks passed. Linux source and packaged service qualification cover idle,
-/watch and /direct with SIGINT/SIGTERM, plus repeated signals: six ordinary and
-six repeated cases each. Fourteen real-PTY Setup cases cover first-run modes,
-explicit setup, save/quit, invalid configuration and plain/partial-input Ctrl-C.
+All six packages include Jellyfin FFmpeg/ffprobe 7.1.3-4 portable GPL builds,
+selected by native target and pinned SHA-256. Python is frozen into XCstream.
+There is no Docker runtime requirement. Keep the adjacent bin directory.
+Linux additionally includes a required `_internal` frozen runtime directory. Its
+single-process folder packaging preserves the application's signal handling without
+a onefile parent forwarding a terminal Ctrl-C a second time. Application code is
+unchanged; the strict cancellation and service-shutdown tests remain mandatory.
+Linux requires glibc 2.35+ and system fonts for existing Slate text rendering.
+See notices/FFMPEG.md and BUILD.json for publisher, source, licenses and hashes.
 
-Real matched-Slate encode/probe/decode qualified H.264 + AC3 5.1, HEVC + AAC,
-and 10-bit HEVC + EAC3 5.1. Protected H.264 and HEVC gates exercise repeated
-outage/return cycles; HEVC includes reordered pictures and writer failure.
-The disabled legacy-return gate also passes. Raw captures retain exact
-ring-to-HTTP byte identity, elementary-packet identity and timestamp/PCR checks.
-Finite-file decoding uses a separate completed-PES snapshot, excluding only
-open final units at the arbitrary live capture cutoff. Earlier corruption
-remains a failure, verified by a real-decoder negative test.
+## Verification and limitations
 
-All six native targets passed architecture verification, 57 native
-Setup/cache/handoff tests and frozen executable help/configuration smoke
-checks before publication. BUILD.json records the exact source and build run.
-Linux AMD64 additionally runs the packaged service and real-PTY Setup gates.
-Other-platform service control, end-to-end player behavior and extended
-production soak are not implied by native CLI/configuration smoke checks.
+Each published package must pass executable architecture checks, frozen help,
+config-generation and missing-config failure checks, module-presence checks, and
+native bundled-pair functional media preflight. The release-level verification
+matrix supplied with the published assets records actual completed checks.
+Linux package qualification additionally exercises idle, /watch and /direct
+SIGINT/SIGTERM, repeated signals and terminal setup.
 
-## Distribution and limitations
+Windows packages without native runtime smoke evidence are **EXPERIMENTAL — not
+natively smoke-tested**. Do not interpret a successful build as playback or
+service certification. macOS Intel checks performed through Rosetta are translated,
+not Intel-hardware tests. Container/emulation checks are identified as such.
 
-Six raw native executables and six optional ZIPs are provided with BUILD.json,
-SHA256SUMS and notices/documentation. No Python/Docker runtime is required.
-FFmpeg/ffprobe are external and must be supplied as a qualified matching pair.
-No XCstream source files, test sources or private Git history are included.
-Python executable packaging is not encryption or a reverse-engineering barrier.
+No prolonged production soak, actual downstream DVR/player certification, or
+hardware-specific decode/encode certification is claimed. Custom Slate/profile
+fallback should receive real Kernel Media Server/client playback testing.
+The binaries are unsigned and not notarized. Beta field-testing feedback is welcome.
 
-Protected handoff conservatively retains Slate for mismatched profiles, sources
-starting with inter-coded pictures/HEVC CRA instead of a configured IDR, or
-private attempts exceeding the bounded 16 MB prefix. Unsupported matched-Slate
-profiles use the fixed fallback. Legacy return remains available with Protected
-Handoff Disabled. These beta constraints are intentional abstention, not proof
-that every downstream decoder or source profile is qualified.
+No proprietary XCstream source or source history belongs in XCstream-Releases.
+Older releases remain available for provenance.
 
-Linux builds use Ubuntu 22.04/glibc 2.35; macOS uses native macOS 15 runners;
-Windows uses Windows 2022/Windows 11 ARM runners. Unsigned/not notarized private
-beta; verify checksums before OS approval. No new licensing terms are added.
+## Qualification of this published package set
+
+Source commit: `c4ab9ec3eb96413b66afe4f4a2519c983ea6d1a8`.
+Native build run: `39715246053`. Every package's BUILD.json identifies this same
+clean source revision. These are the existing qualified packages; no source or
+media-tool validation changes were made for release assembly.
+
+The Setup cancellation correction keeps interactive POSIX editing off the main
+signal-handling thread. The first-run `Press Enter to launch XCstream...` pause
+uses that same corrected reader, preserving its exact text, Enter behavior,
+injected readers, exit 130, and terminal restoration. Streaming initialization,
+runtime signal handling, media validation, and recovery were not changed.
+
+Source qualification: **770 passed, 0 failed, 0 skipped**. Full real-terminal
+Setup qualification: **14 passed**. Source idle/watch/direct shutdown:
+**12 passed**, covering SIGINT/SIGTERM and repeated signals. Compile and
+protected-source checks passed. Additional source cancellation checks passed on
+Linux GNU Readline and native macOS libedit, including 40 integrated cases on
+each and 100 widened GNU typeahead-race checks with the original deadlines.
+
+### Per-platform verification matrix
+
+All six builds ran on matching native GitHub runners. Each passed executable and
+bundled-tool architecture checks, frozen CLI/config/missing-config smoke checks,
+and native automatic discovery plus the application's functional media preflight.
+
+| Package | Native build and smoke | Additional qualification / limits |
+| --- | --- | --- |
+| Linux AMD64 | Passed on native x86-64 Linux | Packaged 12 shutdown cases, 14 interactive Setup cases, and 10 repeated cancellation cases passed. Local source checks used AMD64 Docker emulation on an ARM64 Mac. |
+| Linux ARM64 | Passed on native ARM64 Linux | Packaged 12 shutdown cases, 14 interactive Setup cases, and 10 repeated cancellation cases passed. |
+| macOS AMD64 | Passed on native Intel macOS | Native bundled-media qualification passed. Additional Rosetta execution failed before Setup; see the explicit limitation below. No translated interactive pass is claimed. |
+| macOS ARM64 | Passed on native Apple Silicon macOS | Downloaded executable passed 12 additional real-terminal cancellation cases on an M1 Mac, including first-run launch-pause cancellation. |
+| Windows AMD64 | Passed on native Windows x64 | Native CLI/config and media preflight passed. Interactive console cancellation, Windows service/control events and downstream playback are not certified. |
+| Windows ARM64 | Passed on native Windows ARM64 | Native CLI/config and media preflight passed. Interactive console cancellation, Windows service/control events and downstream playback are not certified. |
+
+### Rosetta limitation — failed check retained
+
+The additional Intel macOS package run through Rosetta on an Apple Silicon Mac
+exited **2** before reaching Setup: **`ffmpeg identity: timed out`**. That check
+**failed** and is not presented as a successful cancellation or compatibility test.
+The native Intel CI package/media qualification passed. Rosetta translation is
+not one of the six native deployment targets; the owner explicitly accepted this
+as a documented beta limitation. No timeout increase, validation change, retry
+workaround, or rebuild was used. Apple Silicon users should select darwin-arm64.
+
+The six ZIPs retain their native build bytes. Release assembly verifies their
+exact source commit, executable/tool architectures and hashes, frozen runtime
+contents, required documentation/notices and source-free file allowlists.
+SHA256SUMS covers all six ZIPs, the combined BUILD.json and release documents.
+This beta is not a production soak, actual DVR/player, or hardware certification.

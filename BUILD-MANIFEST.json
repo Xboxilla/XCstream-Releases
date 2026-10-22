@@ -1,181 +1,402 @@
 {
-  "version": "0.9.9-beta",
-  "release_tag": "v0.9.9-beta",
-  "source_commit": "eed993ed0385de63c9b381a64ebde64a717c734b",
-  "source_tag": "v0.9.9-beta",
-  "source_branch": "development/v0.9.9-beta",
-  "build_run": 37553673980,
-  "tests": {
-    "passed": 643,
-    "failed": 0,
-    "skipped": 0
-  },
-  "native_setup_cache_handoff_tests_per_target": 57,
-  "source_linux": {
-    "setup": 14,
-    "ordinary_signals": 6,
-    "repeated_signals": 6
-  },
-  "packaged_linux_amd64": {
-    "setup": 14,
-    "ordinary_signals": 6,
-    "repeated_signals": 6
-  },
-  "matched_slate_profiles": 3,
-  "emitted_media_gates": {
-    "protected_h264": true,
-    "protected_hevc_writer_failure": true,
-    "disabled_legacy_return": true
-  },
-  "capture_validation": "Raw HTTP/ring capture unchanged. Decoder input excludes only final open PES units. Earlier-corruption negative decoder test passes.",
-  "limitations": [
-    "Unsigned/not notarized private beta; external qualified FFmpeg/ffprobe required.",
-    "Other-platform full service-control, downstream-player behavior and extended production soak are not inferred from native smoke checks.",
-    "Protected handoff is disabled by default and abstains on unproven profile/IDR starts or attempts exceeding its bounded private prefix."
-  ],
+  "version": "0.9.10-beta",
+  "git_commit": "c4ab9ec3eb96413b66afe4f4a2519c983ea6d1a8",
   "builds": [
     {
-      "version": "0.9.9-beta",
-      "git_commit": "eed993ed0385de63c9b381a64ebde64a717c734b",
+      "version": "0.9.10-beta",
+      "git_commit": "c4ab9ec3eb96413b66afe4f4a2519c983ea6d1a8",
       "tracked_tree_dirty": false,
       "target": "darwin-amd64",
       "verified_binary_architecture": "amd64",
       "python": "3.14.7",
-      "binary_filename": "XCstream-0.9.9-beta-darwin-amd64",
-      "binary_sha256": "3cf22876387b61e79cfcdae34bbcfb9af1ba48784f201b78159deceb5db8c035",
+      "binary_filename": "XCstream-0.9.10-beta-darwin-amd64",
+      "binary_sha256": "4c24cd50db5cd342934cc2a22f1d7571995cc696ba7ce010f0dc79ed3a50a84d",
       "smoke_checks": [
         "native frozen help/version",
         "native frozen config generation/defaults",
         "native frozen missing headless config fails without setup",
         "modern setup and renderer modules present in frozen executable",
         "native frozen HUD/Web refresh defaults verified",
-        "matched Slate/protected handoff modules present; DVR/default-disabled handoff verified"
+        "persistent Slate/storage/terminal modules present; mature recovery defaults verified",
+        "native bundled FFmpeg/ffprobe identity and architecture",
+        "native automatic adjacent-bin discovery and application media preflight"
       ],
-      "build_run": "37553673980",
-      "ffmpeg_included": false,
-      "signed": false
+      "build_run": "39715246053",
+      "ffmpeg_included": true,
+      "media_dependencies": {
+        "publisher": "Jellyfin",
+        "release": "7.1.3-4",
+        "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.1.3-4/jellyfin-ffmpeg_7.1.3-4_portable_mac64-gpl.tar.xz",
+        "archive_sha256": "5997dacdaf02e7f6b62143a9b4a0e3a97c298fa152d73f3c62f9a6cdf2796182",
+        "source_url": "https://github.com/jellyfin/jellyfin-ffmpeg/tree/v7.1.3-4",
+        "tools": {
+          "ffmpeg": {
+            "filename": "bin/ffmpeg",
+            "sha256": "8715550fff014d0e08488201113631f2680d680d10cc2d11a150bde19bf8dd1b",
+            "architecture": "amd64",
+            "version": "ffmpeg version 7.1.3-Jellyfin Copyright (c) 2000-2025 the FFmpeg developers"
+          },
+          "ffprobe": {
+            "filename": "bin/ffprobe",
+            "sha256": "a6631eec8619f766bcbce676a16719edc7ee9f9d4592477d340d67b42020b78a",
+            "architecture": "amd64",
+            "version": "ffprobe version 7.1.3-Jellyfin Copyright (c) 2007-2025 the FFmpeg developers"
+          }
+        },
+        "optional_visual_diagnostics_available": true
+      },
+      "signed": false,
+      "bundle_mode": "onefile",
+      "runtime_files": {}
     },
     {
-      "version": "0.9.9-beta",
-      "git_commit": "eed993ed0385de63c9b381a64ebde64a717c734b",
+      "version": "0.9.10-beta",
+      "git_commit": "c4ab9ec3eb96413b66afe4f4a2519c983ea6d1a8",
       "tracked_tree_dirty": false,
       "target": "darwin-arm64",
       "verified_binary_architecture": "arm64",
       "python": "3.14.7",
-      "binary_filename": "XCstream-0.9.9-beta-darwin-arm64",
-      "binary_sha256": "8c6611bc67bafe52e17dd55f86c3916beb3f7f9d0d7e43705d785c5c4f854563",
+      "binary_filename": "XCstream-0.9.10-beta-darwin-arm64",
+      "binary_sha256": "39fadafac541b44504e27a152cd1da3622e928f32a90a172457b0c11f2cf8dc9",
       "smoke_checks": [
         "native frozen help/version",
         "native frozen config generation/defaults",
         "native frozen missing headless config fails without setup",
         "modern setup and renderer modules present in frozen executable",
         "native frozen HUD/Web refresh defaults verified",
-        "matched Slate/protected handoff modules present; DVR/default-disabled handoff verified"
+        "persistent Slate/storage/terminal modules present; mature recovery defaults verified",
+        "native bundled FFmpeg/ffprobe identity and architecture",
+        "native automatic adjacent-bin discovery and application media preflight"
       ],
-      "build_run": "37553673980",
-      "ffmpeg_included": false,
-      "signed": false
+      "build_run": "39715246053",
+      "ffmpeg_included": true,
+      "media_dependencies": {
+        "publisher": "Jellyfin",
+        "release": "7.1.3-4",
+        "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.1.3-4/jellyfin-ffmpeg_7.1.3-4_portable_macarm64-gpl.tar.xz",
+        "archive_sha256": "5915363f38a85274ba9e43f61c1cbc3497dde1e141fb53ba7339494a98f48b25",
+        "source_url": "https://github.com/jellyfin/jellyfin-ffmpeg/tree/v7.1.3-4",
+        "tools": {
+          "ffmpeg": {
+            "filename": "bin/ffmpeg",
+            "sha256": "4015f192b1de8006eef8e76871b05a78741ddfd5a274d81a36ad495d59c3fa5c",
+            "architecture": "arm64",
+            "version": "ffmpeg version 7.1.3-Jellyfin Copyright (c) 2000-2025 the FFmpeg developers"
+          },
+          "ffprobe": {
+            "filename": "bin/ffprobe",
+            "sha256": "f2d9f772e4fe579713b7ddc373ee81cf29e513124f1500476ef313c17bc3683b",
+            "architecture": "arm64",
+            "version": "ffprobe version 7.1.3-Jellyfin Copyright (c) 2007-2025 the FFmpeg developers"
+          }
+        },
+        "optional_visual_diagnostics_available": true
+      },
+      "signed": false,
+      "bundle_mode": "onefile",
+      "runtime_files": {}
     },
     {
-      "version": "0.9.9-beta",
-      "git_commit": "eed993ed0385de63c9b381a64ebde64a717c734b",
+      "version": "0.9.10-beta",
+      "git_commit": "c4ab9ec3eb96413b66afe4f4a2519c983ea6d1a8",
       "tracked_tree_dirty": false,
       "target": "linux-amd64",
       "verified_binary_architecture": "amd64",
       "python": "3.14.8",
-      "binary_filename": "XCstream-0.9.9-beta-linux-amd64",
-      "binary_sha256": "f7fc0678bc4208d44810c08f8b1c16ea0261b179332dc5d42d844883d8d3c88e",
+      "binary_filename": "XCstream-0.9.10-beta-linux-amd64",
+      "binary_sha256": "5d8f999f26af9d0b700b9e9e0d66b71a9ec5b79697739727132ca3edf68aeeb0",
       "smoke_checks": [
         "native frozen help/version",
         "native frozen config generation/defaults",
         "native frozen missing headless config fails without setup",
         "modern setup and renderer modules present in frozen executable",
         "native frozen HUD/Web refresh defaults verified",
-        "matched Slate/protected handoff modules present; DVR/default-disabled handoff verified"
+        "persistent Slate/storage/terminal modules present; mature recovery defaults verified",
+        "native bundled FFmpeg/ffprobe identity and architecture",
+        "native automatic adjacent-bin discovery and application media preflight"
       ],
-      "build_run": "37553673980",
-      "ffmpeg_included": false,
-      "signed": false
+      "build_run": "39715246053",
+      "ffmpeg_included": true,
+      "media_dependencies": {
+        "publisher": "Jellyfin",
+        "release": "7.1.3-4",
+        "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.1.3-4/jellyfin-ffmpeg_7.1.3-4_portable_linux64-gpl.tar.xz",
+        "archive_sha256": "fa77f7e7cadf4539db7f7ef9b18e96070198d377e4aa76f6154be50e0df7da5d",
+        "source_url": "https://github.com/jellyfin/jellyfin-ffmpeg/tree/v7.1.3-4",
+        "tools": {
+          "ffmpeg": {
+            "filename": "bin/ffmpeg",
+            "sha256": "771a903cb8c6f17afdcea8e921fde05183c5f6a70411c65509ae43a33062d991",
+            "architecture": "amd64",
+            "version": "ffmpeg version 7.1.3-Jellyfin Copyright (c) 2000-2025 the FFmpeg developers"
+          },
+          "ffprobe": {
+            "filename": "bin/ffprobe",
+            "sha256": "752127c19c2f8433582b36c893aa56caeae5874759ae016bbfc6dad6c08c7645",
+            "architecture": "amd64",
+            "version": "ffprobe version 7.1.3-Jellyfin Copyright (c) 2007-2025 the FFmpeg developers"
+          }
+        },
+        "optional_visual_diagnostics_available": true
+      },
+      "signed": false,
+      "bundle_mode": "onedir",
+      "runtime_files": {
+        "_internal/base_library.zip": "59d4419aa020abc219cd6fcc9d214a6c52ce193a2b2ca6e685b2dfbf20f318e5",
+        "_internal/libbz2.so.1.0": "54d16979912ab62282350dd2dc5dceb5b73b13e27bb02792087aff752d16f6e9",
+        "_internal/libcrypto.so.3": "7cc817ff1841b59516d684f357bc0c3fc2cc52c3fa9b4ffb8ce8bdc215f02915",
+        "_internal/libffi.so.8": "247da4d5d34a91cadcdd6282be4c4644fcb8af001334d2b8a82ecda435418cbf",
+        "_internal/liblzma.so.5": "7fa51c1500cb9fcc4c7d69b7fe0a6d7203cfe6af64373f6c411c5445ef1b402c",
+        "_internal/libpython3.14.so.1.0": "b6f203a4b9c7f04c7b996dc4ede4ced5fdb4f3e45eb133da59e1e3d466520562",
+        "_internal/libreadline.so.8": "57419e3b177639246ecf7ffd2eba170bde779b7369d70e68b9b4c5fc3051cbc1",
+        "_internal/libssl.so.3": "51fc92556f11ddce62f3f988d3fe973fab8fb4742032e61a713688581c924262",
+        "_internal/libtinfo.so.6": "856b8451914abc2277c3d91c64ba3e72b2e0d519806397afecae92fda1a6b10c",
+        "_internal/libz.so.1": "64c206f0146cc58bbddc4f22054436f4ff278f5a554aa3ce6921ddf7e9133370",
+        "_internal/libzstd.so.1": "5df4f4df42d76270bb6981fabc7c1fdccd8ad28a23d84d67f73203fb3f537667",
+        "_internal/psutil/_psutil_linux.abi3.so": "8085c743a77f6059be6d18d54317ccce2e715425bb5f15aa8835770463d6b9fd",
+        "_internal/python3.14/lib-dynload/_bisect.cpython-314-x86_64-linux-gnu.so": "7dc8e4f675b0b12cd1836cf8e5ac177374bc584a1e9cfabadb8d04f0b013c054",
+        "_internal/python3.14/lib-dynload/_blake2.cpython-314-x86_64-linux-gnu.so": "d8a36687c251d65230b5198f41a3d437dfb74ed0d51c79915d79328671efe7cd",
+        "_internal/python3.14/lib-dynload/_bz2.cpython-314-x86_64-linux-gnu.so": "e8401d37a8c60995bfcf225c2296c1f211c9d9db73c7875d0891caf48a6d2696",
+        "_internal/python3.14/lib-dynload/_codecs_cn.cpython-314-x86_64-linux-gnu.so": "6736881f3c6240a085c2dc32ba281241e0b4b4123a31f31800ee0bb1f024d122",
+        "_internal/python3.14/lib-dynload/_codecs_hk.cpython-314-x86_64-linux-gnu.so": "9eb8780346e6168a2bbd9eb6e43d08a589e63f66a942ed71aa103f8eb385782d",
+        "_internal/python3.14/lib-dynload/_codecs_iso2022.cpython-314-x86_64-linux-gnu.so": "1c90d88435c8ea15bc9089f93d88e8270d8448d0aa4d64e8fdf9131b4f346b96",
+        "_internal/python3.14/lib-dynload/_codecs_jp.cpython-314-x86_64-linux-gnu.so": "1d39a7dba0e8728ef138fc1fad93cf954ffc43d7b3667ce51185bb518abdb1f9",
+        "_internal/python3.14/lib-dynload/_codecs_kr.cpython-314-x86_64-linux-gnu.so": "d653abf9bcf64cee5b60c78bdfaa4d4f63095a6202083b594237bfe6f89776c4",
+        "_internal/python3.14/lib-dynload/_codecs_tw.cpython-314-x86_64-linux-gnu.so": "014b9730c7f361623a55f56c0bfe95c1af58276be0b48115d941596e023a19d7",
+        "_internal/python3.14/lib-dynload/_csv.cpython-314-x86_64-linux-gnu.so": "e13839101ae1ceb1c8f859aa4c1cc1159d19ec0dc79f3a22d91067001242c912",
+        "_internal/python3.14/lib-dynload/_ctypes.cpython-314-x86_64-linux-gnu.so": "f76007d424cbb2eecf2c0c16684cd8ebdf212f59f962a622bd0974bc32ec8c22",
+        "_internal/python3.14/lib-dynload/_decimal.cpython-314-x86_64-linux-gnu.so": "d87eaceed958e17abf42735228f9efa7a8042da6a7dbb2ce55051cb6bb19ccd2",
+        "_internal/python3.14/lib-dynload/_elementtree.cpython-314-x86_64-linux-gnu.so": "64e7a7a2a93f058bbae2d38d6e99a40e259604bc9a3b0327ffb3799c781d8e07",
+        "_internal/python3.14/lib-dynload/_hashlib.cpython-314-x86_64-linux-gnu.so": "84907f3c7a5fb333179449bb04eef35285e47bc53985497efdb874103232b39d",
+        "_internal/python3.14/lib-dynload/_heapq.cpython-314-x86_64-linux-gnu.so": "5bd587ae7497f989b421223beffeb4abb16917305ba092b4add9b54e067c57fd",
+        "_internal/python3.14/lib-dynload/_hmac.cpython-314-x86_64-linux-gnu.so": "31ecf3ca309843e08b1b50f99fce936037879afd86b78a0c019f6a3b51298d2c",
+        "_internal/python3.14/lib-dynload/_json.cpython-314-x86_64-linux-gnu.so": "46a9de044decc852baf8da53dbeb2f84934d2b9a5525d05709a185bb1b96afd5",
+        "_internal/python3.14/lib-dynload/_lzma.cpython-314-x86_64-linux-gnu.so": "71c8f76420b51831f51be6fd53b9098b43666efc0b711679beea3ac3c07ac663",
+        "_internal/python3.14/lib-dynload/_md5.cpython-314-x86_64-linux-gnu.so": "fef2689df62fe1a3f73146f9ba977bfa4521089ca06a2a76ae00dccc00f9f3cc",
+        "_internal/python3.14/lib-dynload/_multibytecodec.cpython-314-x86_64-linux-gnu.so": "781f019849d20d1b1f586efc03bb2d7c2e3df83c162c8ff73940002daf7eb7b6",
+        "_internal/python3.14/lib-dynload/_pickle.cpython-314-x86_64-linux-gnu.so": "964e84bfc20cdd515869e1af76773cca70d0c3aa91d205b61b412438c25c7810",
+        "_internal/python3.14/lib-dynload/_posixsubprocess.cpython-314-x86_64-linux-gnu.so": "72b85d0edacc9b1fd0fb271b48b46d4ae83dbbb3cce60bf6086182a004193d04",
+        "_internal/python3.14/lib-dynload/_queue.cpython-314-x86_64-linux-gnu.so": "851a23f9462ae431a18426907895c3469b6b26231c4045d7ea33ca7efef9e2ee",
+        "_internal/python3.14/lib-dynload/_random.cpython-314-x86_64-linux-gnu.so": "97e90ab67fd846255a3930b183d95e60ad156cfe0390c29d59c27f6bfafd648e",
+        "_internal/python3.14/lib-dynload/_sha1.cpython-314-x86_64-linux-gnu.so": "9dbb5d7888490602f237a68af0db6244244acc83f645195b0a9509a40c979494",
+        "_internal/python3.14/lib-dynload/_sha2.cpython-314-x86_64-linux-gnu.so": "033d5d7dcf2242271629f7650c2a3c2c3e8f366337cf93aa8bb98417b4713103",
+        "_internal/python3.14/lib-dynload/_sha3.cpython-314-x86_64-linux-gnu.so": "0f4be7251c645c120986421c688f6631efa57c76ceace515e481dd40703cff04",
+        "_internal/python3.14/lib-dynload/_socket.cpython-314-x86_64-linux-gnu.so": "b20eeae95815b28fb4b67925da844d0ec5c12313a4c8317a130d2d76961659a4",
+        "_internal/python3.14/lib-dynload/_ssl.cpython-314-x86_64-linux-gnu.so": "730f309251d5f814c2760af2c49e156c1bf9add5abc1a3f53ffcaaeea6c99f0f",
+        "_internal/python3.14/lib-dynload/_statistics.cpython-314-x86_64-linux-gnu.so": "c8e9ec0dc745cfcd9013f75ffb5e965dcde037c8dfc512e17b7d82f2f51e0e96",
+        "_internal/python3.14/lib-dynload/_struct.cpython-314-x86_64-linux-gnu.so": "834f07deb0ca867b2b751b87ae43e447959b6fbd2b3195edc71058959696ffac",
+        "_internal/python3.14/lib-dynload/_zstd.cpython-314-x86_64-linux-gnu.so": "b5636671ba71bf0afefdeae47030ab2475a09f13947fd8a119ebaf5edfc37bfc",
+        "_internal/python3.14/lib-dynload/array.cpython-314-x86_64-linux-gnu.so": "2060fbd59337933641058b3f5184833e6b346084fb921c49592bb375239b0ab4",
+        "_internal/python3.14/lib-dynload/binascii.cpython-314-x86_64-linux-gnu.so": "8596331b83eb4d227a25de10086661193f7ebb17606629aba40a0f7715a3ccd7",
+        "_internal/python3.14/lib-dynload/fcntl.cpython-314-x86_64-linux-gnu.so": "cc37cc5d9372e1019d526d85a216f2a1e48413388ef999725601732a51ce31e3",
+        "_internal/python3.14/lib-dynload/grp.cpython-314-x86_64-linux-gnu.so": "10f680d414a6385ac80c5688f7a550d556f1dc0c17a34a4e9d469c8bc437cf7a",
+        "_internal/python3.14/lib-dynload/math.cpython-314-x86_64-linux-gnu.so": "b6d97fa7a6841f92ab9b5423243d9e963f7ae759ff906dda695828f90523df8b",
+        "_internal/python3.14/lib-dynload/pyexpat.cpython-314-x86_64-linux-gnu.so": "c9648c4357df6bfd3cd1c6d44831148d3048aeebcb3c29eb2aba95d82dcc4a8f",
+        "_internal/python3.14/lib-dynload/readline.cpython-314-x86_64-linux-gnu.so": "99c1f1427e02159fe68ac86e752a09e1272b87a89d673d91eb5f8a72a423056e",
+        "_internal/python3.14/lib-dynload/resource.cpython-314-x86_64-linux-gnu.so": "7325ee4bf11d9fb063dea34372c1eaa46f24a9c076bb08f61c5931a6bdfba9cd",
+        "_internal/python3.14/lib-dynload/select.cpython-314-x86_64-linux-gnu.so": "48e1b2db5d75335e16a6da6fd63c330e62e0d8f1a8aaa876a68bcf827f45dbf5",
+        "_internal/python3.14/lib-dynload/termios.cpython-314-x86_64-linux-gnu.so": "3dd87ca6a1734d8e3521d311f02e73d94cc7877308bbe5183777ecfb8c086c0f",
+        "_internal/python3.14/lib-dynload/unicodedata.cpython-314-x86_64-linux-gnu.so": "8d8a39265db7dc72864e3695d9a37341d07154b043872f61ae6d670cb5073608",
+        "_internal/python3.14/lib-dynload/zlib.cpython-314-x86_64-linux-gnu.so": "00b493333231977801ed4627612286c2b8598697a2ba788b9d07fc55776bd3f2"
+      }
     },
     {
-      "version": "0.9.9-beta",
-      "git_commit": "eed993ed0385de63c9b381a64ebde64a717c734b",
+      "version": "0.9.10-beta",
+      "git_commit": "c4ab9ec3eb96413b66afe4f4a2519c983ea6d1a8",
       "tracked_tree_dirty": false,
       "target": "linux-arm64",
       "verified_binary_architecture": "arm64",
-      "python": "3.14.7",
-      "binary_filename": "XCstream-0.9.9-beta-linux-arm64",
-      "binary_sha256": "6f9de8ebb906c8a4118a13dd19b63b8e9eeaa9d5e28813ce5c818945b90ae824",
+      "python": "3.14.8",
+      "binary_filename": "XCstream-0.9.10-beta-linux-arm64",
+      "binary_sha256": "e2fc30d905d4a68a3e4e086d8134c43f265e23c56645ac347f7c63301f568ffe",
       "smoke_checks": [
         "native frozen help/version",
         "native frozen config generation/defaults",
         "native frozen missing headless config fails without setup",
         "modern setup and renderer modules present in frozen executable",
         "native frozen HUD/Web refresh defaults verified",
-        "matched Slate/protected handoff modules present; DVR/default-disabled handoff verified"
+        "persistent Slate/storage/terminal modules present; mature recovery defaults verified",
+        "native bundled FFmpeg/ffprobe identity and architecture",
+        "native automatic adjacent-bin discovery and application media preflight"
       ],
-      "build_run": "37553673980",
-      "ffmpeg_included": false,
-      "signed": false
+      "build_run": "39715246053",
+      "ffmpeg_included": true,
+      "media_dependencies": {
+        "publisher": "Jellyfin",
+        "release": "7.1.3-4",
+        "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.1.3-4/jellyfin-ffmpeg_7.1.3-4_portable_linuxarm64-gpl.tar.xz",
+        "archive_sha256": "5efb50df7a817015340b01111d2c2c8f24d82a060bd88f7ad49bcbdecf0fefbe",
+        "source_url": "https://github.com/jellyfin/jellyfin-ffmpeg/tree/v7.1.3-4",
+        "tools": {
+          "ffmpeg": {
+            "filename": "bin/ffmpeg",
+            "sha256": "cbccee138291d43bcf165edb20433265dc94736744f08c86b49c874f4472d18f",
+            "architecture": "arm64",
+            "version": "ffmpeg version 7.1.3-Jellyfin Copyright (c) 2000-2025 the FFmpeg developers"
+          },
+          "ffprobe": {
+            "filename": "bin/ffprobe",
+            "sha256": "00c1b1a03921c0fc994509072f26d78631f304e50115cae506cf327939bfb1db",
+            "architecture": "arm64",
+            "version": "ffprobe version 7.1.3-Jellyfin Copyright (c) 2007-2025 the FFmpeg developers"
+          }
+        },
+        "optional_visual_diagnostics_available": true
+      },
+      "signed": false,
+      "bundle_mode": "onedir",
+      "runtime_files": {
+        "_internal/base_library.zip": "5da92ee19c743d8e66e5b5c0a8c3f61d121e8300733588576b5b068c9c374aae",
+        "_internal/libbz2.so.1.0": "c1a639e7b208c0eeb5a35f88e9e5bccc535a46c5ce8f9ae2a76f0590c27fd2c5",
+        "_internal/libcrypto.so.3": "6df6c9ca3eb2a0ecded968b7aafb9e97d0942ffeebdcf916a35d3be2bf6a5810",
+        "_internal/libffi.so.8": "b0c75d5a51c7ee793f7b8ac587a32fcf6d7c6ae08864581b6577478f75ff61f0",
+        "_internal/liblzma.so.5": "1124a0b0207812a4db57a4b6469a54b856f6ce9cbc098891d344f0acbf85d367",
+        "_internal/libpython3.14.so.1.0": "927576958afd0ee38e89b89f9762fbdd14d1b0a83c7d62d43e5656026ebdf219",
+        "_internal/libreadline.so.8": "d32d5a8a75d7169309ddaa2b6fe7c7037780ce0b7153267dba44547fe45c51fb",
+        "_internal/libssl.so.3": "f901613b60ff2d9e1e486c8ac3404467f90b1708502cda3fe7d082a1570723cc",
+        "_internal/libtinfo.so.6": "bed3a0938f5f6911dcbb83b02a9f9edc493990405d71fd84b4ad9130aab57f2c",
+        "_internal/libz.so.1": "8cd4dd1e893bc67102bbe7d2f0e895a98dd142857228c70bef7878a55eb58bb6",
+        "_internal/libzstd.so.1": "a1561916ef6f9bfdcf3246b4cb1eab98771a9f689422cae645d89e3cc589035d",
+        "_internal/psutil/_psutil_linux.abi3.so": "463d351dd4b4d93957d30a7b645dd0bccd09276fd5d26c0ebd8c10e5088ba1a3",
+        "_internal/python3.14/lib-dynload/_bisect.cpython-314-aarch64-linux-gnu.so": "312a7d9bfbc0d1d64fb0b6af0cacb3e2b14b6b50acbced084eec230e782dcfc4",
+        "_internal/python3.14/lib-dynload/_blake2.cpython-314-aarch64-linux-gnu.so": "11477c8496024636a692fed45d24aa5377bdc6fb617ecff24df918e386f2acd7",
+        "_internal/python3.14/lib-dynload/_bz2.cpython-314-aarch64-linux-gnu.so": "f9a9abde17afca26a47c030bd652d6d705ca73ede14ae391e49271a368dc4edb",
+        "_internal/python3.14/lib-dynload/_codecs_cn.cpython-314-aarch64-linux-gnu.so": "90d16059cd854f22f2f3e6a1fcac3145501fa3fe93049e44803628c8f0e6cb28",
+        "_internal/python3.14/lib-dynload/_codecs_hk.cpython-314-aarch64-linux-gnu.so": "3ed7f9493d439071124128924024fbd686cf99da13c17c662852f63131c8c5ef",
+        "_internal/python3.14/lib-dynload/_codecs_iso2022.cpython-314-aarch64-linux-gnu.so": "e3f2c985626860889a655e5f5973282cdc80467c3cf3f539c8c8e897e28b29a5",
+        "_internal/python3.14/lib-dynload/_codecs_jp.cpython-314-aarch64-linux-gnu.so": "8b5c010ecdc1d14661ca4e8a1f5c742bcbaa52ec981dd03af08eeec28a9afa2d",
+        "_internal/python3.14/lib-dynload/_codecs_kr.cpython-314-aarch64-linux-gnu.so": "513f5fde293f2835d78a56e81e9f28be049259eae709c72fde09b67e54031bd9",
+        "_internal/python3.14/lib-dynload/_codecs_tw.cpython-314-aarch64-linux-gnu.so": "bb25a864083272b7dff968bf35bd6491faf39ad69a367891c58739659d7ecacd",
+        "_internal/python3.14/lib-dynload/_csv.cpython-314-aarch64-linux-gnu.so": "16cead62203a13a5b2049c55604cf54a7ec5cfdec13a5febdb1bc4b8a0d70e23",
+        "_internal/python3.14/lib-dynload/_ctypes.cpython-314-aarch64-linux-gnu.so": "be3267b0e37d6c210a136d276da4b1ceb9378d87c41254670e2e575d9df19346",
+        "_internal/python3.14/lib-dynload/_decimal.cpython-314-aarch64-linux-gnu.so": "60ae8365ebea81b8951832f22a915e2e173929c955cb8d1c37defc5e18e95c77",
+        "_internal/python3.14/lib-dynload/_elementtree.cpython-314-aarch64-linux-gnu.so": "975b11bbd930a098a7051913e0012416794e1b12549d434df700abae843f94a4",
+        "_internal/python3.14/lib-dynload/_hashlib.cpython-314-aarch64-linux-gnu.so": "610482bfca9289a5fd96ccbd373de801a0c872e12d67c968fbb9fb9f2744865f",
+        "_internal/python3.14/lib-dynload/_heapq.cpython-314-aarch64-linux-gnu.so": "b15ff7d511c67ae9197481fdc0cd28f633c918296c9de52ff4569bdf6c56e9a0",
+        "_internal/python3.14/lib-dynload/_hmac.cpython-314-aarch64-linux-gnu.so": "9d50b1cbfbc6f8f3f4b0ef6c5acbc8e8d3b5b8996d9e9aa14fc188a10f4f0131",
+        "_internal/python3.14/lib-dynload/_json.cpython-314-aarch64-linux-gnu.so": "2faffbd2c5cd3a3c2bbbad6be7930d59fcaf5bf460849060e6df4490ec43fccb",
+        "_internal/python3.14/lib-dynload/_lzma.cpython-314-aarch64-linux-gnu.so": "44939fd5d7215a70d7d4bb82760924b63976a98ac9017594b22c64261de7aa2e",
+        "_internal/python3.14/lib-dynload/_md5.cpython-314-aarch64-linux-gnu.so": "a9021d50ba76fc623d6b3614fbb0e469b4016ad19fa783a377491ca177a7d31e",
+        "_internal/python3.14/lib-dynload/_multibytecodec.cpython-314-aarch64-linux-gnu.so": "a24fcf857100f99b71d884a44b38444258369faf0b5cf19dfd56619b453fd78f",
+        "_internal/python3.14/lib-dynload/_pickle.cpython-314-aarch64-linux-gnu.so": "184f019bdb2ab24b672fa7a902eeb855e6850058a1a91c93a7df67ab19ad24d3",
+        "_internal/python3.14/lib-dynload/_posixsubprocess.cpython-314-aarch64-linux-gnu.so": "bc15def1c14ff431f51d89f1056ed217c5afed0fe799b1563f48c3df40dae4f0",
+        "_internal/python3.14/lib-dynload/_queue.cpython-314-aarch64-linux-gnu.so": "2b01adaebbfca01a1aeb1e49a7349faee2c8a1b41ce5f85fd4c023160aa09c47",
+        "_internal/python3.14/lib-dynload/_random.cpython-314-aarch64-linux-gnu.so": "7ec3f02f0c85bca590029f9435b6e2126ed005957092959ad45043ec37c2c60e",
+        "_internal/python3.14/lib-dynload/_sha1.cpython-314-aarch64-linux-gnu.so": "9cd975306df668b23d235308db8cf69ad332d757bf83aaa7aa882281f8e4810c",
+        "_internal/python3.14/lib-dynload/_sha2.cpython-314-aarch64-linux-gnu.so": "9929040e8b3c8ecf90ad9e6b290e50e150ae53af01442e12c67af76ef3f47d47",
+        "_internal/python3.14/lib-dynload/_sha3.cpython-314-aarch64-linux-gnu.so": "078725d07213da0a3e16f047659980c419ff32c930e5b4ac1a591a7e8d7dc0e5",
+        "_internal/python3.14/lib-dynload/_socket.cpython-314-aarch64-linux-gnu.so": "6bbe23d0d2849481527e19eb8b66687e69a541935bf779625f3440a209ec810d",
+        "_internal/python3.14/lib-dynload/_ssl.cpython-314-aarch64-linux-gnu.so": "51083c8cbc13530fc82a06450c9a9bba84b2ec4bc21ee9c5f27d0720875aa0c0",
+        "_internal/python3.14/lib-dynload/_statistics.cpython-314-aarch64-linux-gnu.so": "e86ebee58bcadfbd5de8ba1e89513eee1d81390453a2e1394f5713e50c382c96",
+        "_internal/python3.14/lib-dynload/_struct.cpython-314-aarch64-linux-gnu.so": "bc5a7e85174321bf26df7f65f1293665ccd7dead13f745acc627607bbcd1dbb1",
+        "_internal/python3.14/lib-dynload/_zstd.cpython-314-aarch64-linux-gnu.so": "1ed14dc4c246626c57df5664f3aed181e6e27d2b8bdb7b840b257b04f14e84d7",
+        "_internal/python3.14/lib-dynload/array.cpython-314-aarch64-linux-gnu.so": "0b3aaec5449263275d700e9dad2dbbfc2505e19db75d2fafd17261e5481d28ed",
+        "_internal/python3.14/lib-dynload/binascii.cpython-314-aarch64-linux-gnu.so": "eaccd93664f3d77dbb24e492b9dbf08e20ab1babf52de9c9d46e2497d69ff584",
+        "_internal/python3.14/lib-dynload/fcntl.cpython-314-aarch64-linux-gnu.so": "d79a1ccb54bbbe18523cf3779e5212d72d7326a148fd15b26ef43d590783aa0f",
+        "_internal/python3.14/lib-dynload/grp.cpython-314-aarch64-linux-gnu.so": "df5c0f8c806d410d2f1cebacd9147d7d4ae1e2a8390073aff2d9aa0fa94c56fe",
+        "_internal/python3.14/lib-dynload/math.cpython-314-aarch64-linux-gnu.so": "499fef8e7529a1ba7fecd5ec4da282b84f8acbc4fa26c7f583a593585b41b969",
+        "_internal/python3.14/lib-dynload/pyexpat.cpython-314-aarch64-linux-gnu.so": "7c8b6370193e833ec84ac4924c22cd2e03b0e33b7542309fa35a108a3af51557",
+        "_internal/python3.14/lib-dynload/readline.cpython-314-aarch64-linux-gnu.so": "8d696276b09d860a94c2749e10ad163f317aa7a698689e2b8da20757747dea7e",
+        "_internal/python3.14/lib-dynload/resource.cpython-314-aarch64-linux-gnu.so": "59918f5ceea03d26b6cb0c3f5a645d58fdb6a6a018c9e7435db33528a6507c54",
+        "_internal/python3.14/lib-dynload/select.cpython-314-aarch64-linux-gnu.so": "2d77d5313bf72e03f34b422c81d18b4f9866c0637edeba8a420e5a787808593f",
+        "_internal/python3.14/lib-dynload/termios.cpython-314-aarch64-linux-gnu.so": "2c4dc0a1725e2d64d4fbf9c6dad5d27c11751b99a5d74b6d94a4e32ad0a3d67c",
+        "_internal/python3.14/lib-dynload/unicodedata.cpython-314-aarch64-linux-gnu.so": "6478a9145825ae0c6a31a9fc7ae4f0ec93e33852a508fe350aadad57f0b9973d",
+        "_internal/python3.14/lib-dynload/zlib.cpython-314-aarch64-linux-gnu.so": "1ae1f53d298e8dcccefc0dceda2c9847870efda2825540517e7290d16350c62d"
+      }
     },
     {
-      "version": "0.9.9-beta",
-      "git_commit": "eed993ed0385de63c9b381a64ebde64a717c734b",
+      "version": "0.9.10-beta",
+      "git_commit": "c4ab9ec3eb96413b66afe4f4a2519c983ea6d1a8",
       "tracked_tree_dirty": false,
       "target": "windows-amd64",
       "verified_binary_architecture": "amd64",
-      "python": "3.14.7",
-      "binary_filename": "XCstream-0.9.9-beta-windows-amd64.exe",
-      "binary_sha256": "33c454735b22f3f8147a880b37d7cef125c1693e590d1b984f1f8e5c54504e7c",
+      "python": "3.14.8",
+      "binary_filename": "XCstream-0.9.10-beta-windows-amd64.exe",
+      "binary_sha256": "04c3385790c7f2b6fce8b0338aa8f5e4dc4b2325008bbc76bfa3897156603b08",
       "smoke_checks": [
         "native frozen help/version",
         "native frozen config generation/defaults",
         "native frozen missing headless config fails without setup",
         "modern setup and renderer modules present in frozen executable",
         "native frozen HUD/Web refresh defaults verified",
-        "matched Slate/protected handoff modules present; DVR/default-disabled handoff verified"
+        "persistent Slate/storage/terminal modules present; mature recovery defaults verified",
+        "native bundled FFmpeg/ffprobe identity and architecture",
+        "native automatic adjacent-bin discovery and application media preflight"
       ],
-      "build_run": "37553673980",
-      "ffmpeg_included": false,
-      "signed": false
+      "build_run": "39715246053",
+      "ffmpeg_included": true,
+      "media_dependencies": {
+        "publisher": "Jellyfin",
+        "release": "7.1.3-4",
+        "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.1.3-4/jellyfin-ffmpeg_7.1.3-4_portable_win64-clang-gpl.zip",
+        "archive_sha256": "7a5078cacb7e22fe7e2fd1454ac088ec4296420f6788e6eed41f4c1ee8db0e80",
+        "source_url": "https://github.com/jellyfin/jellyfin-ffmpeg/tree/v7.1.3-4",
+        "tools": {
+          "ffmpeg": {
+            "filename": "bin/ffmpeg.exe",
+            "sha256": "8e552ec705ade13f15f8ccee9a764852b8935ff7e59348b08690dbf026791ed7",
+            "architecture": "amd64",
+            "version": "ffmpeg version 7.1.3-Jellyfin Copyright (c) 2000-2025 the FFmpeg developers"
+          },
+          "ffprobe": {
+            "filename": "bin/ffprobe.exe",
+            "sha256": "0afd3aa7eb897c604915fae81e4beaa152b6409acb6ac5dc1af5fdc461f6584b",
+            "architecture": "amd64",
+            "version": "ffprobe version 7.1.3-Jellyfin Copyright (c) 2007-2025 the FFmpeg developers"
+          }
+        },
+        "optional_visual_diagnostics_available": true
+      },
+      "signed": false,
+      "bundle_mode": "onefile",
+      "runtime_files": {}
     },
     {
-      "version": "0.9.9-beta",
-      "git_commit": "eed993ed0385de63c9b381a64ebde64a717c734b",
+      "version": "0.9.10-beta",
+      "git_commit": "c4ab9ec3eb96413b66afe4f4a2519c983ea6d1a8",
       "tracked_tree_dirty": false,
       "target": "windows-arm64",
       "verified_binary_architecture": "arm64",
-      "python": "3.14.7",
-      "binary_filename": "XCstream-0.9.9-beta-windows-arm64.exe",
-      "binary_sha256": "da2739205b23ce85364f3b4eb251ac94eddb847e29987cba7fff14a9034450ab",
+      "python": "3.14.8",
+      "binary_filename": "XCstream-0.9.10-beta-windows-arm64.exe",
+      "binary_sha256": "734591a4d55584d4990dcb5884e7321550471080da6d3c4fce48c15a37b70585",
       "smoke_checks": [
         "native frozen help/version",
         "native frozen config generation/defaults",
         "native frozen missing headless config fails without setup",
         "modern setup and renderer modules present in frozen executable",
         "native frozen HUD/Web refresh defaults verified",
-        "matched Slate/protected handoff modules present; DVR/default-disabled handoff verified"
+        "persistent Slate/storage/terminal modules present; mature recovery defaults verified",
+        "native bundled FFmpeg/ffprobe identity and architecture",
+        "native automatic adjacent-bin discovery and application media preflight"
       ],
-      "build_run": "37553673980",
-      "ffmpeg_included": false,
-      "signed": false
+      "build_run": "39715246053",
+      "ffmpeg_included": true,
+      "media_dependencies": {
+        "publisher": "Jellyfin",
+        "release": "7.1.3-4",
+        "url": "https://github.com/jellyfin/jellyfin-ffmpeg/releases/download/v7.1.3-4/jellyfin-ffmpeg_7.1.3-4_portable_winarm64-clang-gpl.zip",
+        "archive_sha256": "e1a496127a0d9138b9afaf53406e7495d8e5d8a6154018568ab224caf3b2e873",
+        "source_url": "https://github.com/jellyfin/jellyfin-ffmpeg/tree/v7.1.3-4",
+        "tools": {
+          "ffmpeg": {
+            "filename": "bin/ffmpeg.exe",
+            "sha256": "6e3626820cfadcfcb31b306e8c9faf46c48db1f2683cf8eb925cdbf739543310",
+            "architecture": "arm64",
+            "version": "ffmpeg version 7.1.3-Jellyfin Copyright (c) 2000-2025 the FFmpeg developers"
+          },
+          "ffprobe": {
+            "filename": "bin/ffprobe.exe",
+            "sha256": "87b56c17c22ff91ef05d8bc4a738fc6e62c05900fb4f9a8d97f3df16d73754ca",
+            "architecture": "arm64",
+            "version": "ffprobe version 7.1.3-Jellyfin Copyright (c) 2007-2025 the FFmpeg developers"
+          }
+        },
+        "optional_visual_diagnostics_available": true
+      },
+      "signed": false,
+      "bundle_mode": "onefile",
+      "runtime_files": {}
     }
-  ],
-  "sha256": {
-    "BUILD.json": "7adb4a64e6e67300f1fdd0c3f22217f7d7379e638f3c8874aa7ad28bb80ab883",
-    "README.md": "ff987de1942e8e4420d17df326f918fb23e3bff829931a13aea0b7d50bb646ae",
-    "RELEASE.md": "15084688d93fcabba2ec2cc34545cea47d52ba98060c18f92c7afbbf97de0000",
-    "XCstream-0.9.9-beta-darwin-amd64": "3cf22876387b61e79cfcdae34bbcfb9af1ba48784f201b78159deceb5db8c035",
-    "XCstream-0.9.9-beta-darwin-amd64.zip": "ff5e41a820530717b0da7544e702ff95f83923cd9810630e0c68190950b14704",
-    "XCstream-0.9.9-beta-darwin-arm64": "8c6611bc67bafe52e17dd55f86c3916beb3f7f9d0d7e43705d785c5c4f854563",
-    "XCstream-0.9.9-beta-darwin-arm64.zip": "751b5472ac521c91bd8ef68fcbb8d783c5eb48f0555ce7fa099724b8a92f87e0",
-    "XCstream-0.9.9-beta-linux-amd64": "f7fc0678bc4208d44810c08f8b1c16ea0261b179332dc5d42d844883d8d3c88e",
-    "XCstream-0.9.9-beta-linux-amd64.zip": "48a8b98a6bd60839552f504d6736e3363068872622731cda7f180b375e24b1e5",
-    "XCstream-0.9.9-beta-linux-arm64": "6f9de8ebb906c8a4118a13dd19b63b8e9eeaa9d5e28813ce5c818945b90ae824",
-    "XCstream-0.9.9-beta-linux-arm64.zip": "a54b608e526a36f302b22465df6caaf7490660f40a9cdfe36bb98f75af158046",
-    "XCstream-0.9.9-beta-windows-amd64.exe": "33c454735b22f3f8147a880b37d7cef125c1693e590d1b984f1f8e5c54504e7c",
-    "XCstream-0.9.9-beta-windows-amd64.zip": "9c251dba5954c6329691570e3bf114ac3016ba2d892d4c29be54032e4cf4dd00",
-    "XCstream-0.9.9-beta-windows-arm64.exe": "da2739205b23ce85364f3b4eb251ac94eddb847e29987cba7fff14a9034450ab",
-    "XCstream-0.9.9-beta-windows-arm64.zip": "3883fe1c76d74fd84206a3651fc91e499d2d07ea85ea0cd02685e75df47404d2"
-  }
+  ]
 }
