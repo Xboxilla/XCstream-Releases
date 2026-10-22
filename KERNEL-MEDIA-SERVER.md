@@ -40,3 +40,13 @@ Never force-release or reset a tuner. A recovery/Slate episode still owns the so
 Use `--kms-origin` with the exact scheme/host/port permitted to frame `/kms`.
 The ordinary dashboard remains non-frameable. This is a trusted-network interface,
 not a public authenticated ingest endpoint. No HLS/DASH or DVR API is added.
+
+## Package integrity and distribution
+
+Verify the exact package against the accompanying SHA256SUMS. The documentation
+and license refresh changes ZIP checksums, not XCstream executables or bundled
+media tools. Integrations pinning archive hashes must use the matching manifest.
+
+See [LICENSE-XCSTREAM.md](LICENSE-XCSTREAM.md) for the proprietary XCstream terms.
+Separately granted written integration/distribution permissions remain subject
+to their own terms. Third-party components retain their respective licenses.
